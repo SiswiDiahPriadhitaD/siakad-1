@@ -7,8 +7,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/config', function () {
-    Artisan::call('migrate:fresh');
-    Artisan::call('db:seed');
+    Artisan::call(
+        'migrate:fresh',
+        [
+            '--force' => true
+        ]
+    );
+    Artisan::call(
+        'db:seed',
+        [
+            '--force' => true
+        ]
+    );
 });
 
 Route::resource('mahasiswa', MahasiswaController::class);
