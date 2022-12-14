@@ -1,5 +1,6 @@
 #!/usr/bin/env php
 <?php
+if (!defined('STDIN')) define('STDIN', fopen("php://stdin", "r"));
 
 define('LARAVEL_START', microtime(true));
 
@@ -14,6 +15,7 @@ define('LARAVEL_START', microtime(true));
 | loading of any of our classes manually. It's great to relax.
 |
 */
+
 
 require __DIR__.'/vendor/autoload.php';
 
